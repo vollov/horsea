@@ -1,0 +1,9 @@
+Page Module:
+api/v1/page/<page-slug>
+Home
+Privacy
+Rules
+Terms
+Contacts
+
+ 

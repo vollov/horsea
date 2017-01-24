@@ -1,0 +1,65 @@
+<div ng-show="error" class="alert alert-danger row">
+	<span>{{ error.message }}</span>
+</div>
+
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+		<h1>Register</h1>
+
+		<div class="well">
+			<form role="form" ng-submit="vm.register()">
+				<div class="form-group">
+					<label for="register__email">Email</label> <input type="email"
+						class="form-control" id="register__email" required ng-model="vm.user.email"
+						placeholder="ex. john@notgoogle.com" />
+				</div>
+
+				<div class="form-group">
+					<label for="register__username">Username</label> <input type="text"
+						class="form-control" id="register__username" required 
+						ng-model="vm.user.username" placeholder="ex. john" />
+				</div>
+
+				<div class="form-group">
+					<label for="register__password">Password</label> <input
+						type="password" class="form-control" id="register__password" 
+						required ng-model="vm.user.password" placeholder="ex. thisisnotgoogleplus" />
+				</div>
+
+				<div class="form-group">
+					<label for="register__confirm_password">Password Confirm</label> <input
+						type="password" class="form-control" id="register__password" 
+						required ng-model="vm.user.confirm_password" placeholder="ex. thisisnotgoogleplus" />
+				</div>
+
+				<div class="form-group">
+					<label for="register__firstName">First Name</label> <input
+						type="text" class="form-control" id="register__firstName"
+						placeholder="First Name" required ng-model="vm.user.firstName"></input>
+				</div>
+
+				<div class="form-group">
+					<label for="register__lastName">Last Name</label> <input
+						type="text" class="form-control" id="register__lastName"
+						placeholder="Last Name" required ng-model="vm.user.lastName"></input>
+				</div>
+				
+				<div class="form-group">
+					<label for="register__birthyear">Birth Year</label> <input
+						type="number" class="form-control" id="register__birthyear" min="1950" max="1993"
+						placeholder="1950 or after" required ng-model="vm.user.birthyear"></input>
+				</div>
+
+				<div class="checkbox">
+					<label> 
+						<input required type="checkbox"> I accept the terms to use ocbl.ca
+					</label>
+				</div>
+		
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

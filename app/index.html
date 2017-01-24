@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="ocblApp" class="no-js">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ocbl.ca</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="styles/ocbl.min.css">
+  <link rel="shortcut icon" href="images/favicon.ico">
+
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+
+
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="NavCtrl as vm">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Super Rent</span>
+          <span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+				</button>
+				<strong class="navbar-brand"></strong>
+			</div>
+
+			<div id="navbar" class="navbar-collapse collapse" >
+
+				<ul class="nav navbar-nav navbar-left">
+					<li><a href="#/">Home</a></li>
+
+					<li><a href="#/register">Registration</a></li>
+
+					<li><a href="#/rules">Rules</a></li>
+					<li><a href="#/teams">Teams</a></li>
+					<li><a href="#/games">Games</a></li>
+
+          <li><a href="#/resources">resources</a></li>
+					<!--
+					<li><a href="#/games/photo">Photo</a></li>
+					 -->
+
+					<li><a href="#/contacts">Contacts</a></li>
+				</ul>
+
+				{{vm.user.username}}
+				<button ng-show="vm.isAuthenticated()" ng-click="vm.logout()"  class="btn btn-success navbar-btn navbar-right">logout</button>
+
+				<a ng-hide="vm.isAuthenticated()" href="#/login" class="btn btn-success navbar-btn navbar-right">login</a>
+			</div>
+			<!--/.navbar-collapse <p class="navbar-text navbar-right">{{LANGUAGE_CODE}}</p> -->
+		</div>
+	</nav>
+
+	<div class="jumbotron">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+				<!-- Ontario Chinese Basketball League -->
+					<h2>Ontario Chinese Basketball League</h2>
+					<!--  <div class="subtitle pull-right">Phone: (519) 748-1341</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+    <ui-view></ui-view>
+	   <hr class="featurette-divider">
+
+	   <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>Copyright &copy; 2016 ocbl.ca All Rights Reserved. Designed by:
+          <a href="http://www.vollov.ca">Dustin</a> &middot;
+          <a href="#/privacy">privacy</a> &middot;
+          <a href="#/terms">terms</a></p>
+      </footer>
+    </div><!-- /container -->
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/marked/lib/marked.js"></script>
+  <script src="bower_components/angular-marked/dist/angular-marked.js"></script>
+
+  <!-- In production use:
+  <script src="js/ocbl.min.js"></script>
+  -->
+  <script src="js/config.js"></script>
+  <script src="js/auth/auth.controller.js"></script>
+  <script src="js/auth/auth.service.js"></script>
+  <script src="js/auth/auth.module.js"></script>
+
+  <script src="js/page/page.controller.js"></script>
+  <script src="js/page/page.service.js"></script>
+  <script src="js/page/page.module.js"></script>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
